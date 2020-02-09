@@ -65,12 +65,21 @@
         active = false;
 
 
-    $('.navbar-toggler, .navbar-nav li a, .overlay').on('click', function () {
+    $('.navbar-toggler, .navbar-nav li a').on('click', function () {
         $('.navbar-toggler').toggleClass('active')
         //   $('#js-navbar-menu').toggleClass('active');
         //   $('.navbar-collapse').toggleClass('show');
         overlay.toggleClass('active');
         navc.toggleClass('active');
+    });
+
+    $('.nav-link').on('click', function() {
+        const links = $(this).parent().parent().children();
+        links.each(link => {
+            console.log(link)
+            // $(link).attr("class", "nav-link")
+        });
+        $(this).parent().toggleClass('active');
     });
 
 
